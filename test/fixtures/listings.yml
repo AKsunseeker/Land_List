@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyString
+  description: MyText
+  zip: MyString
+  square_footage: 1
+
+two:
+  address: MyString
+  description: MyText
+  zip: MyString
+  square_footage: 1
