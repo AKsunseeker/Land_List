@@ -1,9 +1,32 @@
 Rails.application.routes.draw do
+  get 'inqueries/show'
+
+  get 'inqueries/edit'
+
+  get 'inqueries/new'
+
+  get 'inqueries/create'
+
+  devise_for :realtors
+  resources :realtors
+  resources :listings
+  resources :inqueries
+
+  #root 'realtors#new'
+  #get '/signup', to: 'realtors#new', as: 'signup'
+  #get '/login', to: 'sessions#new', as: 'login'
+  #get '/logout', to: 'sessions#destroy', as: 'logout'
+
+  #post '/signup', to: 'realtors#create'
+  #post '/login', to: 'sessions#create'
+  
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  #root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

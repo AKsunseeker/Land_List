@@ -1,0 +1,15 @@
+<%= form_for @realtor do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  <br />
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  <br />
+  <%= f.label :company_name %>
+  <%= f.text_field :company_name %>
+  <br />
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+  <br />
+  <%= f.submit %>
+<% end %>

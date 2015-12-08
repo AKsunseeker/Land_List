@@ -1,0 +1,8 @@
+<h1>Realtor(s) Index</h1>
+<h2> 
+  Welcome,
+  <%= current_realtor.first_name %>
+</h2>
+
+
+<%= link_to 'Logout', destroy_realtor_session_path, method: :delete %>
