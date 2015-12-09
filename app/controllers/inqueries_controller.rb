@@ -1,5 +1,5 @@
 class InqueriesController < ApplicationController
-  before_action :params_id, only: [:show, :edit ]
+  before_action :params_id, only: [:show, :edit, :destroy]
   def show
   end
 
@@ -8,6 +8,7 @@ class InqueriesController < ApplicationController
 
   def new
     @inquery = Inquery.new
+    @listing = Listing.find(params[:listing_id])
   end
 
   def create
@@ -19,7 +20,15 @@ class InqueriesController < ApplicationController
       render :new
     end
   end
-  
+
+  def destroy
+    if @inquery.destroy
+      redirect_to listing_path
+    else
+      redirect_to inquery_path(@inquery) 
+    end
+  end
+
   private
   
   def params_id

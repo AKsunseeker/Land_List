@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
-  get 'inqueries/show'
-
-  get 'inqueries/edit'
-
-  get 'inqueries/new'
-
-  get 'inqueries/create'
+  # root 'listings#index'
+  root 'listings#index'
 
   devise_for :realtors
-  resources :realtors
-  resources :listings
-  resources :inqueries
+
+  resources :realtors do
+    resources :listings
+    resources :inqueries 
+  end
+
+  resources :listings do
+    resources :inqueries
+  end
 
   #root 'realtors#new'
   #get '/signup', to: 'realtors#new', as: 'signup'

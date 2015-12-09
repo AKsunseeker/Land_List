@@ -1,2 +1,20 @@
-<h1>Inqueries#new</h1>
-<p>Find me in app/views/inqueries/new.html.erb</p>
+<div class="row">
+  <div class="col s10 offset-s1">
+    <br />
+    <%= form_for [@listing, @inquery] do |f| %>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+        <br />
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+        <br />
+        <%= f.label :phone_number %>
+        <%= f.telephone_field :phone_number %>
+        <br />
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+        <br />
+        <%= f.submit %>
+    <% end %>
+  </div>
+</div>

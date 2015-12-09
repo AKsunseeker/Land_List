@@ -1,2 +1,11 @@
-<h1>Realtors#show</h1>
-<p>Find me in app/views/realtors/show.html.erb</p>
+<h1>Realtors Profile</h1>
+
+<h2> 
+  Profile for,
+  <%= current_realtor.first_name %>
+</h2>
+
+
+<%= link_to 'Edit Profile', edit_realtor_path(@realtor) %>
+<%= link_to 'Logout', destroy_realtor_session_path, method: :delete %>
+

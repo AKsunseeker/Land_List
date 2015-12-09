@@ -1,13 +1,17 @@
 class ListingsController < ApplicationController
-  before_action :find_listing, only: [:show, :edit, :destroy ]
+  before_action :find_listing, only: [:show, :edit, :destroy, :update]
 
   def index
     @listings = Listing.all
+    @listing = Listing.new if realtor_signed_in?
+    @realtor = current_realtor
   end
 
   def show
     @inqueries = @listing.inqueries
-    @realtor = Realtor.find(@listing.realtor_id)
+    @realtor = Realtor.find(current_realtor) if current_realtor
+    @listings = Listing.all.order updated_at: :desc
+    binding.pry
   end
 
   def new
@@ -26,6 +30,14 @@ class ListingsController < ApplicationController
   def edit
   end
 
+  def update
+    if @listing.update(listing_params)
+      redirect_to listings_path(@listing)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     if @listing.destroy
       redirect_to listings_path
@@ -33,6 +45,7 @@ class ListingsController < ApplicationController
       redirect_to listing_path(@listings) 
     end
   end
+
 
   private
     def listing_params
