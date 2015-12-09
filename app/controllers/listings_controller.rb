@@ -11,7 +11,6 @@ class ListingsController < ApplicationController
     @inqueries = @listing.inqueries
     @realtor = Realtor.find(current_realtor) if current_realtor
     @listings = Listing.all.order updated_at: :desc
-    binding.pry
   end
 
   def new
