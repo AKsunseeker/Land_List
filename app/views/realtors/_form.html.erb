@@ -1,4 +1,6 @@
 <%= form_for @realtor do |f| %>
+  <%= f.file_field :avatar %>
+  <br />
   <%= f.label :first_name %>
   <%= f.text_field :first_name %>
   <br />
@@ -13,3 +15,4 @@
   <br />
   <%= f.submit %>
 <% end %>
+

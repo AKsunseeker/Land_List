@@ -44,7 +44,7 @@ class RealtorsController < ApplicationController
 
   private
     def realtor_params
-      params.require(:realtor).permit(:first_name, :last_name, :company_name, :phone_number)
+      params.require(:realtor).permit(:first_name, :last_name, :company_name, :phone_number, :avatar)
     end
 
     def params_id
