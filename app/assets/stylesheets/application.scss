@@ -12,6 +12,16 @@
  *
  *= require_tree .
  *= require_self
+ *= require material_icons
  */
- @import "materialize";
+  @import "materialize/components/color";
+  $primary-color: color("orange", "lighten-2") !default;
+  @import "materialize";
+
+  .nav-wrapper {
+    position: relative;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    }
 

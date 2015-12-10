@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col s10 offset-s1">
-    <h2>Log in</h2>
+    <h2>Sign In</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
@@ -18,11 +18,12 @@
           <%= f.label :remember_me %>
         </div>
       <% end -%>
-
+      <br />
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <%= f.submit 'Sign in', class: 'btn', onclick: "Materialize.showStaggeredList('#staggered-test')" %>
       </div>
     <% end %>
+    <br />
     <%= render "realtors/shared/links" %>
   </div>
 </div>

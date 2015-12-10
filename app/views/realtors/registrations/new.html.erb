@@ -4,6 +4,11 @@
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
+      
+      <div class="field">
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar %>
+      </div>
 
       <div class="field">
         <%= f.label :email %><br />
@@ -43,10 +48,8 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit 'Sign Up', class: 'btn', onclick: "Materialize.showStaggeredList('#staggered-test')" %>
       </div>
     <% end %>
-    <br />
-    <%= render "realtors/shared/links" %>
   </div>
 </div>

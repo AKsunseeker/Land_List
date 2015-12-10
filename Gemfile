@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.2.2'
+gem 'material_icons'
 gem "paperclip", "~> 4.3"
 gem 'materialize-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20151210014534) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "realtor_id"
+    t.integer  "listing_id"
   end
 
   create_table "listings", force: :cascade do |t|

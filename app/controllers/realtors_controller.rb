@@ -1,11 +1,11 @@
 class RealtorsController < ApplicationController
   before_action :params_id, only: [:show, :update, :edit, :destroy]
   def index
-    @realtors = Realtor.all
+    @realtor = Realtor.find(params[:realtor_id])
+    @listings = Listing.where(realtor_id: @realtor)
   end
 
   def show
-    @listings = @realtor.listings
   end
 
   def new
@@ -44,7 +44,7 @@ class RealtorsController < ApplicationController
 
   private
     def realtor_params
-      params.require(:realtor).permit(:first_name, :last_name, :company_name, :phone_number, :avatar)
+      params.require(:realtor).permit(:first_name, :last_name, :company_name, :phone_number, :avatar, :realtor_id)
     end
 
     def params_id

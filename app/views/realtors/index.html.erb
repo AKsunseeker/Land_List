@@ -6,21 +6,21 @@
         <%= current_realtor.first_name %>
       <% end %>  
     </h2>
-    <h3>Index Listings</h3>
+    <h2>Index Listings</h2>
 
     <br />
     <% if @listings.any? %>
       <ul>
-        <% @listings.each do |list| %>
+        <% @listings.each do |listing| %>
           <li>
-            <%= link_to "Listing - #{listing.name}", listing_path(listing) %>
+            <%= link_to "#{listing.first_name}", listing_path(listing) %>
             <%= button_to 'Edit Listing', edit_listing_path(listing), method: :get %>
-            <%= button_to "Delete Listing", listing_path(list), method: :delete, data: {confirm: 'Really delete this Listing?'} %>
+            <%= button_to "Delete Listing", listing_path(listing), method: :delete, data: {confirm: 'Really delete this Listing?'} %>
           </li>
         <% end %>
       </ul>
       <% else %>
-        <h3>No listings to show</h3>
+        <h2>No Listings</h2>
     <% end %>
 
   </div>

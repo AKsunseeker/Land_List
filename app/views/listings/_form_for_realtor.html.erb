@@ -1,21 +1,17 @@
-<div class="row">
-  <div class="col s10 offset-s1">
-    <% if realtor_signed_in? %>
-      <%= form_for [@realtor, @listing] do |f|%>
-        <%= f.label :address %>
-        <%= f.text_field :address %>
-        <br />
-        <%= f.label :zip %>
-        <%= f.text_field :zip %>
-        <br />
-        <%= f.label :square_footage %>
-        <%= f.number_field :square_footage %>
-        <br />
-        <%= f.label :description %>
-        <%= f.text_area :description %>
-        <br />
-        <%= f.submit %>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<% if realtor_signed_in? %>
+  <%= form_for [@realtor, @listing] do |f|%>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <br />
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+    <br />
+    <%= f.label :square_footage %>
+    <%= f.number_field :square_footage %>
+    <br />
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <br />
+    <%= f.submit 'Submit', class: 'btn', onclick: "Materialize.showStaggeredList('#staggered-test')" %>
+  <% end %>
+<% end %>
