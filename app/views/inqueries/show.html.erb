@@ -1,5 +1,7 @@
-
-
+<%= inquery.first_name %>
+<%= inquery.last_name %>
+<%= inquery.phone_number %>
+<a href="mailto:<%= inquery.email %>"><%= inquery.email %></a>
     <% if realtor_signed_in? %>
       <h2><%= %></h2>
       <%= button_to 'Delete Inquery', realtor_inquery_path(@realtor), method: :delete %>

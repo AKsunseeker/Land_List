@@ -3,6 +3,8 @@
       <a href="/" class="brand-logo">Land List</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if realtor_signed_in? %>
+          <li><%= link_to 'View Listings' , realtor_listings_path(current_realtor) %></li>
+          <li><%= link_to 'View Inqueries', realtor_inqueries_path(current_realtor) %></li>
           <li><%= link_to 'Edit Profile', edit_realtor_path(current_realtor) %></li>
           <li><%= link_to 'Signout', destroy_realtor_session_path, method: :delete %></li>
         <% else %>

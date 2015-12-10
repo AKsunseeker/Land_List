@@ -3,6 +3,12 @@ class InqueriesController < ApplicationController
   def show
   end
 
+  def index
+    @listings = Realtor.find(params[:realtor_id]).listings.map(&:id)
+    @inqueries = Inquery.where(listing_id: @listings)
+  end
+
+
   def edit
   end
 
@@ -12,10 +18,10 @@ class InqueriesController < ApplicationController
   end
 
   def create
-    @inquery = Inquery.new(inquery_params)
-    @listing = Listing.find(@inquery.listing_id)
-    if @inquery.save
-      redirect_to listing_path(@listing)
+    @inquery = Inquery.create(inquery_params)
+    if @inquery.update(listing_id: params[:listing_id])
+      flash[:notice] = 'Inquery Successfully Created'
+      redirect_to listings_path
     else
       render :new
     end
@@ -23,7 +29,7 @@ class InqueriesController < ApplicationController
 
   def destroy
     if @inquery.destroy
-      redirect_to listing_path
+      redirect_to listings_path
     else
       redirect_to inquery_path(@inquery) 
     end
@@ -32,7 +38,7 @@ class InqueriesController < ApplicationController
   private
   
   def params_id
-    @inqueries = Inquery.find(params[:id])
+    @inquery = Inquery.find(params[:id])
   end
 
   def inquery_params

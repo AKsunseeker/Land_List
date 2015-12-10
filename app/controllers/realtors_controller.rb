@@ -27,7 +27,8 @@ class RealtorsController < ApplicationController
 
   def update
     if @realtor.update(realtor_params)
-      redirect_to realtors_path(@realtor)
+      flash[:notice] = "Profile Successfully Changed"
+      redirect_to listings_path
     else
       render :edit
     end

@@ -1,18 +1,18 @@
 <div class="row">
   <div class="col s10 offset-s1">
     <% if realtor_signed_in? %>
-      <%= form_for @listing do |f|%>
+      <%= form_for [@realtor, @listing] do |f|%>
         <%= f.label :address %>
-        <%= f.text_area :address %>
+        <%= f.text_field :address %>
         <br />
         <%= f.label :zip %>
-        <%= f.text_area :zip %>
-        <br />
-        <%= f.label :description %>
-        <%= f.text_area :description %>
+        <%= f.text_field :zip %>
         <br />
         <%= f.label :square_footage %>
         <%= f.number_field :square_footage %>
+        <br />
+        <%= f.label :description %>
+        <%= f.text_area :description %>
         <br />
         <%= f.submit %>
       <% end %>

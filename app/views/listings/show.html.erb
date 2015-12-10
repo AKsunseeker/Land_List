@@ -12,8 +12,8 @@
     <p>Square Footage: <%= @listing.square_footage %></p>
     <%= button_to 'Request Information', new_listing_inquery_path(@listing), method: :get %>
     <% if realtor_signed_in? %>
-      <%= button_to 'Edit Listing', edit_realtor_listing_path, method: :get %>
-      <%= button_to 'Delete Listing', realtor_listing_path(@listing), method: :delete %>
+      <%= button_to 'Edit Listing', edit_realtor_listing_path(@realtor, @listing), method: :get %>
+      <%= button_to 'Delete Listing', realtor_listing_path(@realtor, @listing), method: :delete %>
     <% end %>
   </div>
 </div>

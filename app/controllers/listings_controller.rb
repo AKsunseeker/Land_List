@@ -20,6 +20,7 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     if @listing.save
+      @listing.update(realtor_id: params[:realtor_id])
       redirect_to listings_path
     else
       render :new  
@@ -48,7 +49,7 @@ class ListingsController < ApplicationController
 
   private
     def listing_params
-      params.require(:listing).permit(:address, :description, :zip, :square_footage)
+      params.require(:listing).permit(:address, :description, :zip, :square_footage, :realtor_id)
     end
    
     def find_listing
