@@ -6,7 +6,7 @@
         <%= current_realtor.first_name %>
       <% end %>  
     </h2>
-    <h1>Index Listings</h1>
+    <h3>Index Listings</h3>
 
     <br />
     <% if @listings.any? %>
@@ -22,8 +22,6 @@
       <% else %>
         <h3>No listings to show</h3>
     <% end %>
-    <hr />
 
-    <%= link_to 'Logout', destroy_realtor_session_path, method: :delete %>
   </div>
 </div>
