@@ -2,18 +2,35 @@
   <div class="col s10 offset-s1">
     <h2>Current Listings</h2>
       <% if @listings.any? %>
-        <ul class="collection">
+
+    
+    <div class="row">
+        
           <% @listings.each do |listing| %>
-            <li class="collection-item">
-              <%= link_to "#{listing.address}", listing_path(listing) %>
-              Sqft: <%= "#{listing.square_footage}" %>
-            </li>
+          
+
+
+               <div class="col s12 m4">
+                  <div class="card" style="max-height: 600px;">
+                    <div class="card-image" style="max-height: 175px;">
+                      <%= image_tag listing.avatar.url(:medium) %>
+                      <span class="card-title"><%= listing.address %></span>
+                    </div>
+                    <div class="card-content">
+                      <p><%= listing.description %></p>
+                      <p>Square Footage: <%= listing.square_footage %></p>
+                    </div>
+                    <div class="card-action">
+                      <%= link_to "View Listing", listing_path(listing) %>
+                    </div>
+                  </div>
+                </div>
           <% end %>
-        </ul>
         <% else %>
           <h3>No listings to show</h3>
       <% end %>
-      <br />
+     <br />
+  </div>
       <hr />
       <br />
     <%= render(partial:'form_for_realtor') %>

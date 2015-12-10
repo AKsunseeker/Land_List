@@ -1,5 +1,7 @@
 <% if realtor_signed_in? %>
   <%= form_for [@realtor, @listing] do |f|%>
+    <%= f.file_field :avatar %>
+    <br />
     <%= f.label :address %>
     <%= f.text_field :address %>
     <br />
