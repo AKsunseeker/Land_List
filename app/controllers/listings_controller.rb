@@ -10,7 +10,6 @@ class ListingsController < ApplicationController
   def show
     @inqueries = @listing.inqueries
     @realtor = Realtor.find(current_realtor) if current_realtor
-    @listings = Listing.all.order updated_at: :desc
   end
 
   def new

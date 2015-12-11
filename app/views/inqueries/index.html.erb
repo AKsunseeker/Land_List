@@ -3,14 +3,15 @@
     <h2>Inqueries</h2>
     <ul class="collection">
     <% @inqueries.each do |inquery| %>
-      <li class="collection-item">
-      <div>
-      First Name: <%= inquery.first_name %>
-      Last Name: <%= inquery.last_name %>
-      Phone Number: <%= inquery.phone_number %>
-      E-Mail: <%= inquery.email %>
-      <%= link_to 'Delete Inquery', realtor_inquery_path(current_realtor, inquery), method: :delete, class: "secondary-content material-icons" %></div></li>
-    <% end %>
+       <%= inquery.listing.address %>
+        <li class="collection-item">
+        <div>
+        First Name: <%= inquery.first_name %>
+        Last Name: <%= inquery.last_name %>
+        Phone Number: <%= inquery.phone_number %>
+        E-Mail: <%= inquery.email %>
+        <%= link_to 'Delete Inquery', realtor_inquery_path(current_realtor, inquery), method: :delete, class: "secondary-content material-icons" %></div></li>
+    <% end %> 
     </ul>
   </div>
 </div>

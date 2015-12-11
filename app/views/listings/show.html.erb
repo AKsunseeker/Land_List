@@ -21,7 +21,7 @@
       <%= link_to 'Edit Listing', edit_realtor_listing_path(@realtor, @listing), class: "btn", onclick: "Materialize.showStaggeredList('#staggered-test')" %>
       <%= link_to 'Delete Listing', realtor_listing_path(@realtor, @listing), method: :delete, class: "btn", onclick: "Materialize.showStaggeredList('#staggered-test')" %>
       <% else %>
-        <a href="<% link_to new_listing_inquery_path(@listing)%>" class="btn" onclick="Materialize.showStaggeredList('#staggered-test')">Request Information</a>
+        <%= link_to 'Request Information', new_listing_inquery_path(@listing), class: "btn", onclick: "Materialize.showStaggeredList('#staggered-test')" %>
     <% end %>
   </div>
 </div>

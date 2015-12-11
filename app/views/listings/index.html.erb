@@ -7,21 +7,21 @@
     <div class="row">
         
           <% @listings.each do |listing| %>
-          
-
-
+        
                <div class="col s12 m4">
-                  <div class="card" style="max-height: 600px;">
-                    <div class="card-image" style="max-height: 175px;">
-                      <%= image_tag listing.avatar.url(:medium) %>
+                  <div class="card" >
+                    <div class="card-image" >
+                      <%= image_tag listing.avatar.url(:medium), class: "activator" %>
                       <span class="card-title"><%= listing.address %></span>
                     </div>
                     <div class="card-content">
+                      <span class="activator">More Info</span>
+                      <%= link_to "View Listing", listing_path(listing) %>
+                    </div>
+                    <div class="card-reveal">
                       <p><%= listing.description %></p>
                       <p>Square Footage: <%= listing.square_footage %></p>
-                    </div>
-                    <div class="card-action">
-                      <%= link_to "View Listing", listing_path(listing) %>
+                      <span class="card-title">Hide Description</span>
                     </div>
                   </div>
                 </div>
