@@ -1,15 +1,18 @@
+<br />
 <nav>
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo">Land List</a>
+      <a href="/" class="waves-effect waves-light brand-logo z-depth-3 cyan lighten-1 " style="font-size: 70px;">Land List</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if realtor_signed_in? %>
           <li><%= link_to 'View Listings' , realtor_listings_path(current_realtor) %></li>
           <li><%= link_to 'View Inqueries', realtor_inqueries_path(current_realtor) %></li>
           <li><%= link_to 'Edit Profile', edit_realtor_registration_path %></li>
           <li><%= link_to 'Signout', destroy_realtor_session_path, method: :delete %></li>
+         
         <% else %>
           <li><a href="/realtors/sign_in">Realtor Sign In</a></li>
           <li><a href="/realtors/sign_up">Realtor Signup</a></li>
+          
         <% end %>
       </ul>
     </div>

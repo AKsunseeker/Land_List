@@ -11,7 +11,6 @@ class InqueriesController < ApplicationController
    #@inqueries = Inquery.where(listing_id: @listings)
  end
 
-
  def edit
  end
 
